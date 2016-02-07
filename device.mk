@@ -261,8 +261,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dex2oat-swap=false \
     dalvik.vm.image-dex2oat-filter=speed
-    dalvik.vm.dex2oat-filter=speed \
-    persist.sys.lazy.dexopt=true
 
 ifeq ($(findstring tiny, $(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -287,6 +285,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # set SELinux property value
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+        dalvik.vm.dex2oat-filter=speed \
+        dalvik.vm.dex2oat-swap=false
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
